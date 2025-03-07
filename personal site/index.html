@@ -52,6 +52,12 @@
 						<!-- Work -->
 							<article id="experience">
 								<h2 class="major">Projects</h2>
+								<h3>Automated AWS CloudWatch Reporting System</h3>
+								<p>This alarm system is implemented in AWS to generate a daily report of my CloudWatch alarm activities and CloudWatch agents in my EC2 instances. 
+									I setup EventBridge to send a log to a CloudWatch log group everytime my alarms are triggered(changed states to ALARM). I then created a lambda function that queries all the log events in the past 24hrs and writes them to an excel csv file. 
+									The lambda function will also get the metrics collected by each active CloudWatch agents that are active in all my EC2 instances. These csv files are stored in an S3 bucket. Finally, these csv files will be sent via email using SES. 
+									I scheduled an EventBridge trigger the lambda function every 24hrs to send me these daily reports.</p>
+							
 								<h3><a href="https://daksh-goyal.github.io/rogue-roulette/pgb/">Rogue Roullete</a></h3>
 								<p>Rogue roullete is a game that I developed as a team of 6 people. Over the course of 3 months, we routinely release new versions of our game starting from <a href="https://daksh-goyal.github.io/rogue-roulette">alpha to gold</a> and documented user feedback and changes that were made in a game design document. During this process, we also collected data from play testers by implementing analytics using firebase database and utilized python to visualize data to make iterative improvements to the game.</p>
 							
